@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FlavioBolsonaroNão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F6;--ink:#0E1A2F;--card:#fff;--red:#D7191F;--mut:#55627A;--line:#C9D1DE;--wa:#128C4A;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1220;--ink:#E8EDF6;--card:#131D31;--red:#FF5A5F;--mut:#9AA8C0;--line:#26334D;--wa:#2BBF72}}
+:root[data-theme="dark"]{--bg:#0B1220;--ink:#E8EDF6;--card:#131D31;--red:#FF5A5F;--mut:#9AA8C0;--line:#26334D;--wa:#2BBF72}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 "Source Sans 3",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+[hidden]{display:none!important}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px}
+.hero{padding:40px 0 28px;border-bottom:6px solid var(--red)}
+.hero h1{font:400 clamp(44px,13vw,104px)/.92 Anton,Impact,sans-serif;margin:0}
+.hero h1 b{display:block;color:var(--red);font-weight:400;font-size:1.55em;line-height:.85}
+.hero p{max-width:34em;font-size:1.15rem;margin:18px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:8px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 1rem "Source Sans 3",sans-serif;text-decoration:none;cursor:pointer}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+h2.sec{font:400 1.7rem/1 Anton,Impact,sans-serif;margin:30px 0 12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:24px}
+.stat{background:var(--card);border-left:6px solid var(--red);padding:12px 14px;border-radius:0 8px 8px 0}
+.stat strong{display:block;font:400 2.1rem/1 Anton,Impact,sans-serif;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--mut);line-height:1.3;display:block;margin-top:2px}
+.notice{margin:16px 0 0;font-size:.92rem;color:var(--mut)}
+.start{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;margin-top:26px;padding:18px;border:0;border-radius:10px;background:var(--red);color:#fff;cursor:pointer;font:400 1.5rem/1.1 Anton,Impact,sans-serif}
+.start small{display:block;font:400 .95rem "Source Sans 3",sans-serif;margin-top:4px;opacity:.95}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tile{display:flex;flex-direction:column;gap:2px;text-align:left;padding:14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-family:inherit}
+.tile:hover{border-color:var(--red)}
+.tile .ic{font-size:1.6rem;line-height:1}
+.tile b{font:400 1.35rem/1.1 Anton,Impact,sans-serif;margin-top:6px}
+.tile span{font-size:.88rem;color:var(--mut);line-height:1.25}
+.tile em{font-style:normal;font-weight:700;color:var(--red);margin-top:6px;font-size:.9rem}
+.lh{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.lh h2{font:400 1.7rem/1 Anton,Impact,sans-serif;margin:0}
+.quote{margin:16px 0;padding:16px 18px;background:var(--red);color:#fff;border-radius:8px;font:400 clamp(21px,5.5vw,28px)/1.15 Anton,Impact,sans-serif}
+.rows{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:center;width:100%;text-align:left;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-family:inherit}
+.row:hover{border-color:var(--red)}
+.row .d{font:400 1.05rem/1.1 Anton,Impact,sans-serif;color:var(--red)}
+.row b{display:block;font-size:1.03rem;line-height:1.25}
+.row small{color:var(--mut)}
+.pager{display:flex;justify-content:space-between;gap:10px;margin:22px 0}
+dialog{width:min(560px,calc(100% - 24px));border:0;border-radius:14px;padding:0;background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(5,10,20,.65)}
+.dlg{padding:20px}
+.dlg .tag{display:inline-block;background:var(--ink);color:var(--bg);padding:2px 10px;border-radius:999px;font-weight:700;font-size:.85rem}
+.dlg h3{margin:10px 0 4px;font-size:1.35rem;line-height:1.2}
+.dlg .m{color:var(--mut);font-size:.9rem;margin:0 0 10px}
+.dlg p.t{margin:0 0 16px}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.acts a,.acts button{font:700 1rem "Source Sans 3",sans-serif;padding:10px 14px;border-radius:8px;text-decoration:none;cursor:pointer}
+.src{border:2px solid var(--ink);background:transparent;color:var(--ink)}
+.sh{background:var(--wa);color:#fff;border:2px solid var(--wa)}
+.final{margin:40px 0 28px;text-align:center;padding:26px 18px;background:var(--ink);color:var(--bg);border-radius:12px}
+.final h2{font:400 clamp(28px,8vw,46px)/1 Anton,Impact,sans-serif;margin:0 0 10px}
+footer{padding:0 0 40px;color:var(--mut);font-size:.88rem}
+</style>
+</head>
+<body>
+<div id="home">
+<header class="hero"><div class="wrap">
+  <h1>Flávio Bolsonaro<b>NÃO</b></h1>
+  <p>Investigado pela Polícia Federal no Caso Master e ainda candidato à Presidência? Seu voto não é cheque em branco: confira cada fonte antes de decidir.</p>
+  <div class="btns"><a class="btn wa" id="shareSite" href="#" target="_blank" rel="noopener">Compartilhar no WhatsApp</a></div>
+</div></header>
+<main class="wrap">
+  <section class="stats" aria-label="Números">
+    <div class="stat"><strong>R$ 61 mi</strong><span>pagos pelo Master ao filme Dark Horse (R$ 134 mi negociados)</span></div>
+    <div class="stat"><strong>43</strong><span>vezes faltou com a verdade sobre Vorcaro, diz o Aos Fatos</span></div>
+    <div class="stat"><strong>110</strong><span>mensagens com Vorcaro em 11 meses</span></div>
+    <div class="stat"><strong>51 de 107</strong><span>imóveis da família pagos em dinheiro vivo</span></div>
+  </section>
+  <p class="notice">Investigação não é condenação. Cada ponto tem fonte para você conferir.</p>
+  <button class="start" id="goTop" type="button"><span>Comece por aqui<small>Os 8 pontos mais fortes, em 2 minutos</small></span><span aria-hidden="true">→</span></button>
+  <h2 class="sec">Por assunto</h2><div class="grid" id="byTag"></div>
+  <h2 class="sec">Por época</h2><div class="grid" id="byEra"></div>
+  <section class="final"><h2>Antes de votar, compartilhe.</h2><p>Quem decide é você. Mande para quem ainda não viu.</p><a class="btn wa" id="shareSite2" href="#" target="_blank" rel="noopener">Enviar no WhatsApp</a></section>
+</main>
+<footer><div class="wrap">Conteúdo de opinião política baseado em reportagens públicas de BBC Brasil, Intercept, Piauí, Estadão, O Globo, g1, UOL, Veja, Valor, Poder360, CNN Brasil, Aos Fatos e ICL Notícias.</div></footer>
+</div>
+
+<div id="list" hidden><div class="wrap">
+  <div class="lh"><button class="btn" id="back" type="button">← Início</button><h2 id="lt"></h2></div>
+  <div class="quote" id="lq"></div>
+  <div class="rows" id="rows"></div>
+  <div class="pager" id="pager"></div>
+</div></div>
+
+<dialog id="dlg"><div class="dlg" id="dbody"></div></dialog>
+
+<script>
+var ERAS=[
+{n:"2000–2005",s:"Começo de carreira",q:"O que ele fazia antes de pedir o seu voto?"},
+{n:"2018–2020",s:"Rachadinha e milícia",q:"Investigado por rachadinha. Agora quer a faixa presidencial."},
+{n:"2022–2024",s:"Patrimônio e blindagem",q:"Metade dos imóveis da família paga em dinheiro vivo. Pergunte como."},
+{n:"2025–2026",s:"Caso Master e Vorcaro",q:"Quem visita o banqueiro na véspera de se lançar candidato deve explicações ao eleitor."}];
+var TAGS=["Todos","Caso Master","Rachadinha","Milícia","Patrimônio","Interferência"];
+var I=[
+{e:0,t:"Rachadinha",d:"2000–2002",h:"Três ocupações ao mesmo tempo, em duas cidades",x:"Aos 19 anos, Flávio ocupou cargo na Câmara dos Deputados enquanto fazia faculdade e estágio no Rio.",s:"BBC Brasil",u:"https://www.bbc.com/portuguese/brasil-46828487"},
+{e:0,t:"Milícia",d:"2003",h:"Moção de honra a policial ligado ao Escritório do Crime",x:"Flávio apresentou na Alerj uma moção para Adriano da Nóbrega, que anos depois chefiaria a milícia.",s:"UOL",u:"https://noticias.uol.com.br/politica/ultimas-noticias/2020/02/15/bolsonaro-condecoracao-miliciano-morto-ba.htm"},
+{e:0,t:"Milícia",d:"2004",h:"Homenagem a miliciano suspeito no caso Marielle",x:"Flávio homenageou Ronald Paulo Alves Pereira, apontado como liderança de milícia no Rio.",s:"UOL / Estadão Conteúdo",u:"https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2019/01/22/flavio-bolsonaro-homenageou-em-2004-suspeito-de-participar-da-morte-de-marielle.htm"},
+{e:0,t:"Milícia",d:"2005",h:"Medalha Tiradentes entregue na cadeia",x:"Adriano da Nóbrega, réu por homicídio, recebeu das mãos de Flávio a maior honraria da Alerj, no presídio.",s:"Veja",u:"https://veja.abril.com.br/politica/ex-pm-ligado-a-flavio-bolsonaro-recebeu-medalha-na-cadeia/"},
+{e:1,t:"Rachadinha",d:"2018–2019",h:"O esquema, segundo o MP-RJ",x:"Segundo o MP, o gabinete movimentou milhões com funcionários fantasmas; Queiroz seria o operador financeiro.",s:"Valor Econômico",u:"https://valor.globo.com/politica/eleicoes-2026/noticia/2026/09/01/flavio-bolsonaro-relembre-o-processo-da-rachadinha.ghtml"},
+{e:1,t:"Rachadinha",d:"2019",h:"MP o aponta como chefe de organização criminosa",x:"Em 2019, o MP-RJ detalhou suposto esquema de desvio de dinheiro no gabinete do então deputado. É uma acusação, não uma condenação.",s:"g1",u:"https://g1.globo.com/rj/rio-de-janeiro/noticia/2019/12/19/mp-do-rj-detalha-suposto-esquema-de-corrupcao-envolvendo-entao-deputado-flavio-bolsonaro.ghtml"},
+{e:1,t:"Milícia",d:"2018–2020",h:"Mãe e mulher do chefe do Escritório do Crime no gabinete",x:"Segundo o MP-RJ, as duas eram assessoras fantasmas, com compromisso de devolver parte dos salários.",s:"Veja",u:"https://veja.abril.com.br/coluna/radar/rachadinha-viuva-e-mae-de-miliciano-cometeram-desvios-310-vezes/"},
+{e:1,t:"Patrimônio",d:"2018",h:"1.512 depósitos em dinheiro vivo numa loja de chocolate",x:"O MP investigou se a franquia Kopenhagen de Flávio servia para lavar dinheiro da rachadinha.",s:"O Globo",u:"https://oglobo.globo.com/politica/alvo-de-investigacao-das-rachadinhas-loja-de-flavio-bolsonaro-no-rio-vendida-1-24867874"},
+{e:1,t:"Milícia",d:"2020",h:"Rachadinha financiou prédios da milícia",x:"Reportagem do Intercept mostra o dinheiro do esquema indo para construções ligadas à milícia.",s:"The Intercept Brasil",u:"https://www.intercept.com.br/2020/04/25/flavio-bolsonaro-rachadinha-financiou-milicia/"},
+{e:1,t:"Interferência",d:"Abr 2020",h:"Moro sai do governo e cita proteção a familiares",x:"Moro se demitiu acusando Bolsonaro de querer interferir na PF para obter relatórios sigilosos e proteger aliados e familiares.",s:"g1",u:"https://g1.globo.com/politica/noticia/2020/04/24/moro-anuncia-demissao-do-ministerio-da-justica-e-deixa-o-governo-bolsonaro.ghtml"},
+{e:2,t:"Patrimônio",d:"2022",h:"51 de 107 imóveis pagos em dinheiro vivo",x:"Levantamento do UOL sobre os imóveis comprados pela família Bolsonaro.",s:"g1 / Jornal Nacional",u:"https://g1.globo.com/jornal-nacional/noticia/2022/08/31/reportagem-do-uol-revela-que-51-imoveis-comprados-pela-familia-bolsonaro-foram-pagos-em-dinheiro-vivo.ghtml"},
+{e:2,t:"Patrimônio",d:"2022",h:"Investigação sobre Flávio alcança 37 imóveis",x:"A promotoria apontou indícios de lavagem de dinheiro em transações do então senador.",s:"Estadão",u:"https://www.estadao.com.br/politica/investigacao-sobre-flavio-bolsonaro-alcanca-37-imoveis/"},
+{e:2,t:"Patrimônio",d:"2005–2018",h:"MPF vê “fortes indícios” de lavagem de dinheiro",x:"Foram analisadas 37 transações imobiliárias entre junho de 2005 e maio de 2018.",s:"CNN Brasil",u:"https://www.cnnbrasil.com.br/politica/o-mpf-ve-fortes-indicios-de-lavagem-de-dinheiro-em-bens-de-flavio-bolsonaro/"},
+{e:2,t:"Milícia",d:"2022",h:"16 PMs denunciados condecorados por Flávio e Carlos",x:"Os policiais haviam sido denunciados como integrantes de organizações criminosas.",s:"UOL",u:"https://noticias.uol.com.br/colunas/juliana-dal-piva/2022/09/23/cla-bolsonaro-condecorou-16-pms-denunciados-em-organizacoes-criminosas.htm"},
+{e:2,t:"Interferência",d:"2024",h:"Áudio: Bolsonaro e Ramagem discutem como blindar Flávio",x:"Segundo a PF, o áudio mostra os dois falando em proteger Flávio no caso das rachadinhas.",s:"Valor Econômico",u:"https://valor.globo.com/politica/noticia/2024/07/11/audio-mostra-bolsonaro-e-ramagem-discutindo-como-blindar-flavio-no-caso-das-rachadinhas-segundo-pf.ghtml"},
+{e:3,t:"Caso Master",d:"Jan 2025",h:"Voou no jatinho de Vorcaro com Willer Tomaz",x:"Willer já foi preso no escândalo da JBS e é investigado nos desvios do INSS.",s:"Revista Piauí",u:"https://piaui.uol.com.br/web/flavio-bolsonaro-viajou-em-jato-de-vorcaro/"},
+{e:3,t:"Caso Master",d:"Fev–Mai 2025",h:"R$ 134 milhões negociados para o filme Dark Horse",x:"Flávio negociou com Vorcaro o financiamento do filme sobre Jair Bolsonaro; ao menos R$ 61 milhões foram pagos em seis operações.",s:"The Intercept Brasil",u:"https://www.intercept.com.br/2026/05/13/audio-flavio-negociou-vorcaro-milhoes/"},
+{e:3,t:"Caso Master",d:"Mai 2025",h:"Feriadão na Flórida, dias depois de repasse ao filme",x:"Senador e banqueiro pousaram em Fort Lauderdale quase ao mesmo tempo, dias depois de um repasse milionário ao Dark Horse.",s:"Revista Piauí",u:"https://piaui.uol.com.br/web/feriadao-flavio-vorcaro-florida-dark-horse/"},
+{e:3,t:"Caso Master",d:"2025",h:"11 meses de mensagens com Vorcaro",x:"Foram 110 registros, 14 ligações (8 atendidas) e arquivos de visualização única na semana anterior à prisão do banqueiro.",s:"Revista Piauí",u:"https://piaui.uol.com.br/web/mensagens-celular-flavio-vorcaro/"},
+{e:3,t:"Caso Master",d:"Nov 2025",h:"“Estou e estarei contigo sempre”",x:"Mensagem de Flávio a Vorcaro, um dia antes de o banqueiro ser preso tentando deixar o país.",s:"The Intercept Brasil",u:"https://www.intercept.com.br/2026/05/13/audio-flavio-negociou-vorcaro-milhoes/"},
+{e:3,t:"Caso Master",d:"Fim de 2025",h:"Visitou Vorcaro um dia após a soltura dele",x:"Segundo o Poder360, a viagem a São Paulo foi feita com dinheiro público.",s:"Metrópoles / Poder360",u:"https://www.poder360.com.br/poder-congresso/flavio-viajou-a-sp-com-dinheiro-publico-1-dia-apos-soltura-de-vorcaro/"},
+{e:3,t:"Caso Master",d:"Dez 2025",h:"Visitou Vorcaro na véspera de virar presidenciável",x:"A visita foi um dia antes de Flávio ser anunciado candidato à Presidência.",s:"Metrópoles",u:"https://www.metropoles.com/colunas/igor-gadelha/flavio-visitou-vorcaro-na-vespera-de-ser-anunciado-presidenciavel"},
+{e:3,t:"Caso Master",d:"Jul 2026",h:"Investigado pela PF no Caso Master",x:"Suspeita de corrupção, lavagem de dinheiro e evasão de divisas.",s:"BBC Brasil",u:"https://www.bbc.com/portuguese/articles/c4g5ky0r25jo"},
+{e:3,t:"Caso Master",d:"2026",h:"Ao menos 43 mentiras sobre Vorcaro, segundo o Aos Fatos",x:"A agência de checagem listou as declarações de Flávio sobre sua relação com o banqueiro.",s:"Aos Fatos",u:"https://www.aosfatos.org/noticias/flavio-mentiu-ao-menos-43-vezes-sobre-envolvimento-com-vorcaro/"},
+{e:3,t:"Caso Master",d:"Campanha 2026",h:"Usou apartamento do cunhado de Vorcaro em São Paulo",x:"O imóvel, de Fabiano Zettel, foi depois comprado por Willer Tomaz.",s:"Revista Piauí",u:"https://piaui.uol.com.br/web/flavio-bolsonaro-zettel-tomaz-imovel-vila-nova-conceicao-sao-paulo/"},
+{e:3,t:"Caso Master",d:"s/d",h:"Aniversário da filha em mansão gerida por empresa de Vorcaro",x:"Reportagem do ICL Notícias sobre a festa em Angra dos Reis.",s:"ICL Notícias",u:"https://iclnoticias.com.br/flavio-bolsonaro-aniversario-da-filha-em-mansao/"},
+{e:3,t:"Caso Master",d:"Out 2026",h:"PF investiga empréstimo do BRB para mansão de R$ 6 milhões",x:"A suspeita é de juros abaixo do valor de mercado. O BRB é envolvido no caso Master.",s:"g1",u:"https://g1.globo.com/politica/noticia/2026/10/02/pf-investiga-emprestimo-do-brb-a-flavio-bolsonaro-para-compra-de-uma-mansao-avaliada-em-r-6-milhoes.ghtml"},
+{e:3,t:"Patrimônio",d:"Ago 2026",h:"Mansão quitada 27 anos antes do previsto",x:"Ele diz pagar com renda de advogado, mas a reportagem não achou processo em que atue.",s:"O Globo",u:"https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/08/14/video-mansao-que-fez-patrimonio-de-flavio-disparar-fica-em-terreno-de-2400-m-e-foi-quitada-27-anos-antes-do-previsto.ghtml"},
+{e:3,t:"Caso Master",d:"10 Out 2026",h:"Dividia conta com suspeito de lavar dinheiro do INSS",x:"E-mails indicam conta compartilhada com Willer Tomaz.",s:"UOL",u:"https://noticias.uol.com.br/colunas/fabio-serapiao/2026/10/10/flavio-dividia-conta-com-suspeito-de-lavar-dinheiro-do-inss-indicam-emails.htm"},
+{e:3,t:"Caso Master",d:"2026",h:"Empresa na mesma sala de 16 firmas do Careca do INSS",x:"Segundo o ICL, usavam a mesma contabilidade; a irmã do contador administra o escritório de advocacia de Flávio.",s:"ICL Notícias",u:"https://iclnoticias.com.br/empresas-de-flavio-bolsonaro-e-careca-do-inss/"},
+{e:3,t:"Milícia",d:"Mai 2026",h:"PF apura emenda de Flávio para ONG ligada aos irmãos Brazão",x:"A ONG seria suspeita de integrar esquema de desvios; a assessora de Flávio negociou a emenda com condenado no caso Marielle, segundo o Estadão.",s:"O Globo / Estadão",u:"https://oglobo.globo.com/politica/noticia/2026/05/20/pf-apura-emenda-de-flavio-bolsonaro-para-ong-suspeita-de-integrar-esquema-de-desvios-comandado-por-irmaosbrazao.ghtml"}
+];
+
+var META={
+ "Caso Master":{i:"🏦",d:"Banqueiro, filme, viagens e mensagens",q:"Quem visita o banqueiro na véspera de se lançar candidato deve explicações ao eleitor."},
+ "Rachadinha":{i:"💸",d:"Gabinete e funcionários fantasmas",q:"Investigado por rachadinha. Agora quer a faixa presidencial."},
+ "Milícia":{i:"⚠️",d:"Homenagens, medalhas e emendas",q:"Homenagens e emendas a nomes ligados à milícia. Isso pede explicação."},
+ "Patrimônio":{i:"🏠",d:"Imóveis, dinheiro vivo e mansão",q:"Metade dos imóveis da família paga em dinheiro vivo. Pergunte como."},
+ "Interferência":{i:"🕵️",d:"PF, Moro e blindagem",q:"Moro saiu do governo apontando proteção a familiares."}
+};
+var TOP=[22,16,23,21,26,28,5,10];
+var SITE_URL=""; /* coloque aqui o endereço final do site, ex.: https://seudominio.com.br */
+var SITE=SITE_URL||(/^https?:/.test(location.href)?location.href.split("#")[0]:""),ctx=null;
+function wa(t){return "https://api.whatsapp.com/send?text="+encodeURIComponent(t)}
+function el(tag,cls,txt){var n=document.createElement(tag);if(cls)n.className=cls;if(txt!=null)n.textContent=txt;return n}
+function getList(k,key){
+  if(k==="top")return TOP.map(function(i){return I[i]});
+  if(k==="tag")return I.filter(function(x){return x.t===key});
+  return I.filter(function(x){return x.e===key});
+}
+function seq(k){return k==="tag"?Object.keys(META):k==="era"?ERAS.map(function(_,i){return i}):[0]}
+function info(k,key){
+  if(k==="top")return{t:"Comece por aqui",q:"Seu voto não é cheque em branco."};
+  if(k==="tag")return{t:key,q:META[key].q};
+  return{t:ERAS[key].n,q:ERAS[key].q};
+}
+function show(home){document.getElementById("home").hidden=!home;document.getElementById("list").hidden=home;window.scrollTo(0,0)}
+function go(k,key){
+  ctx={k:k,key:key};var inf=info(k,key),L=getList(k,key);
+  document.getElementById("lt").textContent=inf.t;
+  document.getElementById("lq").textContent=inf.q;
+  var rows=document.getElementById("rows");rows.textContent="";
+  L.forEach(function(x){
+    var b=el("button","row");b.type="button";
+    b.appendChild(el("span","d",x.d));
+    var w=el("span");w.appendChild(el("b","",x.h));w.appendChild(el("small","",x.s+(k==="tag"?"":" · "+x.t)));
+    b.appendChild(w);b.onclick=function(){open(x)};rows.appendChild(b);
+  });
+  var pg=document.getElementById("pager");pg.textContent="";
+  var s=seq(k),ix=s.indexOf(key);
+  if(k!=="top"&&ix<s.length-1){
+    var nk=s[ix+1],nb=el("button","btn red","Próximo: "+info(k,nk).t+" →");nb.type="button";nb.onclick=function(){go(k,nk)};pg.appendChild(nb);
+  }
+  show(false);
+}
+function open(x){
+  var d=document.getElementById("dbody");d.textContent="";
+  d.appendChild(el("span","tag",x.t));d.appendChild(el("h3","",x.h));
+  d.appendChild(el("p","m",x.d+" · "+x.s));d.appendChild(el("p","t",x.x));
+  var a=el("div","acts"),l=el("a","src","Ler a fonte");
+  l.href=x.u;l.target="_blank";l.rel="noopener noreferrer";
+  var sh=el("a","sh","Compartilhar no WhatsApp");
+  var tx="🔎 *"+x.h+"*\n\n"+x.x+"\n\nFonte ("+x.s+"):\n"+x.u+(SITE?"\n\nMais fatos, com fontes: "+SITE:"");
+  sh.href=wa(tx);
+  sh.target="_blank";sh.rel="noopener noreferrer";
+  var c=el("button","src","Fechar");c.type="button";c.onclick=function(){dlg.close()};
+  var cp=el("button","src","Copiar resumo");cp.type="button";cp.onclick=function(){copy(tx,cp)};
+  a.appendChild(l);a.appendChild(sh);a.appendChild(cp);a.appendChild(c);d.appendChild(a);dlg.showModal();
+}
+function copy(t,b){
+  function ok(){b.textContent="Copiado!";setTimeout(function(){b.textContent="Copiar resumo"},1800)}
+  function fb(){var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok()}catch(e){}ta.remove()}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else fb();
+}
+var dlg=document.getElementById("dlg");
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+function tile(ic,name,desc,n,fn){
+  var b=el("button","tile");b.type="button";
+  b.appendChild(el("span","ic",ic));b.appendChild(el("b","",name));b.appendChild(el("span","",desc));b.appendChild(el("em","",n+(n===1?" fato":" fatos")));
+  b.onclick=fn;return b;
+}
+var bt=document.getElementById("byTag");
+Object.keys(META).forEach(function(k){bt.appendChild(tile(META[k].i,k,META[k].d,getList("tag",k).length,function(){go("tag",k)}))});
+var be=document.getElementById("byEra");
+ERAS.forEach(function(E,i){be.appendChild(tile("🗓️",E.n,E.s,getList("era",i).length,function(){go("era",i)}))});
+document.getElementById("goTop").onclick=function(){go("top",0)};
+document.getElementById("back").onclick=function(){show(true)};
+var msg="Flávio Bolsonaro é investigado pela PF no Caso Master. Veja os fatos, com links para as fontes."+(SITE?" "+SITE:"");
+["shareSite","shareSite2"].forEach(function(id){document.getElementById(id).href=wa(msg)});
+</script>
+</body>
+</html>
