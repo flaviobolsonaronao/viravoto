@@ -15,7 +15,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛑%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23D7191F'/%3E%3Ctext x='50' y='72' font-size='64' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -95,7 +95,7 @@ svg.map{display:block;width:100%;max-width:520px;margin:6px auto;border-radius:2
 .map .nl.l{text-anchor:start}
 .map .em{font-size:22px;text-anchor:middle;pointer-events:none}
 .map .fl{fill:#fff;font:400 15px Anton,Impact,"DejaVu Sans Condensed",sans-serif;text-anchor:middle;pointer-events:none}
-.map .fl.s{font-size:10.5px}
+.map .fl.s{font-size:9.5px}
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.88rem;color:var(--mut);margin:10px 0}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 .mp{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
@@ -113,30 +113,133 @@ details.faq p{margin:0 0 12px}
 .fm{display:flex;gap:8px;margin:8px 0}
 .fm button{flex:1;padding:8px;border-radius:8px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:700 .95rem "Source Sans 3",sans-serif;cursor:pointer}
 .fm button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.banners{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.banner{position:relative;overflow:hidden;border-radius:22px;padding:22px 20px 16px;color:#fff;box-shadow:0 10px 28px rgba(8,14,26,.3);transition:transform .2s}
+.banner:hover{transform:translateY(-3px)}
+.banner::before{content:"";position:absolute;right:-50px;top:-50px;width:210px;height:210px;border-radius:50%;background:rgba(255,255,255,.1)}
+.banner::after{content:"";position:absolute;left:-30px;bottom:-60px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.07)}
+.banner>*{position:relative;z-index:1}
+.bn-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.bn-emoji{font-size:3.1rem;line-height:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+.bn-kicker{font:800 .72rem "Source Sans 3",sans-serif;letter-spacing:.12em;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.2)}
+.banner h3{font-family:Anton,Impact,"DejaVu Sans Condensed",sans-serif;font-weight:400;font-size:1.95rem;line-height:1.05;margin:12px 0 8px;letter-spacing:.2px}
+.banner p{margin:0 0 12px;color:rgba(255,255,255,.95);font-size:1.02rem;line-height:1.4}
+.bn-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.bn-chips span{font-weight:700;font-size:.82rem;padding:4px 10px;border-radius:999px;border:1.5px solid rgba(255,255,255,.65)}
+.bn-actions{display:flex;flex-wrap:wrap;gap:8px}
+.bn-cta{background:#fff;color:#14213D;font-weight:800;padding:13px 18px;border-radius:12px;text-decoration:none;font-size:1rem}
+.bn-wa{border:2px solid rgba(255,255,255,.8);color:#fff;font-weight:700;padding:11px 14px;border-radius:12px;text-decoration:none;font-size:.95rem}
+.bn-cta:focus-visible,.bn-wa:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.bn-credit{margin-top:14px;font-size:.82rem;color:rgba(255,255,255,.85);line-height:1.35}
+.b1{background:linear-gradient(135deg,#1F3A5F 0%,#2F5FA8 100%)}
+.b2{background:linear-gradient(135deg,#B3121C 0%,#6E0A12 100%)}
+.b3{background:linear-gradient(135deg,#2B2F3A 0%,#12141A 100%)}
+.credits{margin:14px 0 0;font-size:.92rem;color:var(--mut);line-height:1.5}
+
+.wide{max-width:1080px;margin:0 auto;padding:0 20px}
+.hero{padding:26px 0 22px;border-bottom:4px solid var(--red)}
+.hero-grid{display:grid;gap:20px}
+@media (min-width:860px){.hero-grid{grid-template-columns:1.15fr 1fr;gap:44px;align-items:center}}
+.hero h1{font-size:clamp(38px,9vw,76px)}
+.hero h1 b{font-size:1.3em}
+.hero p{font-size:1.1rem;margin:14px 0 0}
+.hero .btns{margin-top:18px}
+.hero .notice{margin-top:14px}
+.stats{grid-template-columns:1fr 1fr;gap:8px;margin:0}
+.stat{padding:10px 12px}
+.stat strong{font-size:1.6rem}
+.stat span{font-size:.82rem}
+h2.sec{margin:24px 0 10px;font-size:1.5rem}
+.tabs2{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.tabs2 button{padding:9px 16px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:700 .98rem "Source Sans 3",sans-serif;cursor:pointer}
+.tabs2 button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tile{border-top:3px solid var(--red);padding:12px 14px}
+.tile b{margin-top:0}
+.grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.banner{padding:18px 18px 14px}
+.banner h3{font-size:1.55rem;margin:10px 0 6px}
+.banner p{font-size:.98rem;margin:0 0 10px}
+.bn-top{justify-content:flex-start}
+.bn-credit{margin-top:10px}
+@media (max-width:759px){
+  .banners{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+  .banner{flex:0 0 84%;scroll-snap-align:start}
+}
+.credits{margin:8px 0 0;font-size:.85rem}
+.map .em{font-weight:800;fill:#fff;font-family:"Source Sans 3",system-ui,Arial,sans-serif}
+
+.mapband{background:radial-gradient(1100px 520px at 75% 0%,#1D3260 0%,#0B1428 65%);color:#fff;padding:34px 0 40px}
+.mb-grid{display:grid;gap:18px;grid-template-areas:"head" "map" "rest"}
+.mb-head{grid-area:head}.mb-map{grid-area:map}.mb-rest{grid-area:rest}
+@media (min-width:900px){.mb-grid{grid-template-columns:.8fr 1.2fr;grid-template-rows:auto 1fr;grid-template-areas:"head map" "rest map";column-gap:44px;row-gap:14px}.mb-rest{align-self:start}}
+.mb-kicker{font:800 .78rem "Source Sans 3",sans-serif;letter-spacing:.16em;color:#FF8A90}
+.mapband h2{font:400 clamp(36px,8vw,60px)/1 Anton,Impact,"DejaVu Sans Condensed",sans-serif;margin:8px 0 12px}
+.mapband p{color:#DDE3EE;margin:0 0 14px;font-size:1.05rem}
+.mb-stats{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.mb-stats span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:6px 12px;border-radius:999px;font-weight:700;font-size:.9rem}
+.mapband .legend{color:#C9D1DE;margin:0 0 12px}
+.mapband .mp{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff}
+.mapband .mp .note{color:#C9D1DE}
+.mapband .src,.mapband .btn{border-color:rgba(255,255,255,.75);color:#fff;background:transparent}
+.mapband .btn:hover,.mapband .src:hover{background:rgba(255,255,255,.12)}
+.mb-map svg.map{max-width:620px;margin:0 auto;box-shadow:0 16px 44px rgba(0,0,0,.55)}
+.map .mt{fill:#fff;fill-opacity:.7;font:800 10px "Source Sans 3",sans-serif;letter-spacing:.14em}
+.map .mt.r{text-anchor:end}
+.map .nl.e{text-anchor:end}
+.map .edge{stroke-width:2.2;animation-duration:1.8s}
+.map .pill rect{fill:#0A1428;stroke-width:1.6}
+.map .pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.85);opacity:0}}
+.map .node{transition:opacity .2s}
+.row2{display:block;width:100%;text-align:left;padding:12px 14px;margin:0 0 8px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 1rem "Source Sans 3",sans-serif;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.map .pulse{animation:none;opacity:0}}
 </style>
 </head>
 <body>
 <div id="home">
-<header class="hero"><div class="wrap">
-  <h1>Flávio Bolsonaro<b>NÃO</b></h1>
-  <p>Investigado pela Polícia Federal no Caso Master e ainda candidato à Presidência? Seu voto não é cheque em branco: confira cada fonte antes de decidir.</p>
-  <div class="btns"><a class="btn wa" id="shareSite" href="#" target="_blank" rel="noopener">Compartilhar no WhatsApp</a></div>
-</div></header>
-<main class="wrap">
+<header class="hero"><div class="wide hero-grid">
+  <div>
+    <h1>Flávio Bolsonaro<b>NÃO</b></h1>
+    <p>Investigado pela Polícia Federal no Caso Master e ainda candidato à Presidência? Seu voto não é cheque em branco: confira cada fonte antes de decidir.</p>
+    <div class="btns"><button class="btn red" id="goTop" type="button">Comece por aqui →</button><a class="btn" href="#mapa">Ver o mapa</a><a class="btn wa" id="shareSite" href="#" target="_blank" rel="noopener">Compartilhar no WhatsApp</a></div>
+    <p class="notice">Cada ponto tem fonte para você conferir.</p>
+  </div>
   <section class="stats" aria-label="Números">
     <div class="stat"><strong>R$ 61 mi</strong><span>pagos pelo Master ao filme Dark Horse (R$ 134 mi negociados)</span></div>
     <div class="stat"><strong>43</strong><span>vezes faltou com a verdade sobre Vorcaro, diz o Aos Fatos</span></div>
     <div class="stat"><strong>110</strong><span>mensagens com Vorcaro em 11 meses</span></div>
     <div class="stat"><strong>51 de 107</strong><span>imóveis da família pagos em dinheiro vivo</span></div>
   </section>
-  <p class="notice">Investigação não é condenação. Cada ponto tem fonte para você conferir.</p>
-  <button class="start" id="goTop" type="button"><span>Comece por aqui<small>Os 8 pontos mais fortes, em 2 minutos</small></span><span aria-hidden="true">→</span></button>
-  <h2 class="sec">Para entender e conversar</h2><div class="grid tools" id="tools"></div>
-  <h2 class="sec">Por assunto</h2><div class="grid" id="byTag"></div>
-  <h2 class="sec">Por época</h2><div class="grid" id="byEra"></div>
-  <section class="final"><h2>Antes de votar, compartilhe.</h2><p>Quem decide é você. Mande para quem ainda não viu.</p><a class="btn wa" id="shareSite2" href="#" target="_blank" rel="noopener">Enviar no WhatsApp</a></section>
+</div></header>
+<section class="mapband" id="mapa"><div class="wide mb-grid">
+  <div class="mb-head">
+    <span class="mb-kicker">MAPA DE RELAÇÕES</span>
+    <h2>Quem se liga a quem</h2>
+    <p>Toque em um nome para ver só as ligações dele. Toque numa etiqueta para ler o fato e abrir a fonte.</p>
+  </div>
+  <div class="mb-map" id="mapHome"></div>
+  <div class="mb-rest">
+    <div class="mb-stats" id="mbStats"></div>
+    <div class="legend" id="mbLegend"></div>
+    <div class="mp" id="mapPanel"></div>
+    <button class="btn" id="mapFull" type="button">Abrir em tela cheia ou em lista</button>
+  </div>
+</div></section>
+<main class="wide">
+  <h2 class="sec">Explore os fatos</h2>
+  <div class="tabs2" role="group" aria-label="Como explorar">
+    <button type="button" data-p="p-tag" aria-pressed="true">Por assunto</button>
+    <button type="button" data-p="p-era" aria-pressed="false">Por época</button>
+    <button type="button" data-p="p-tool" aria-pressed="false">Mapa e respostas</button>
+  </div>
+  <div id="p-tag"><div class="grid" id="byTag"></div></div>
+  <div id="p-era" hidden><div class="grid" id="byEra"></div></div>
+  <div id="p-tool" hidden><div class="grid" id="tools"></div></div>
+  <h2 class="sec">Participe e divulgue</h2><div class="banners" id="banners"></div>
+  <p class="credits" id="credits"></p>
 </main>
-<footer><div class="wrap">Conteúdo político baseado em fatos noticiados por BBC Brasil, Intercept, Piauí, Estadão, O Globo, g1, UOL, Veja, Valor, Poder360, CNN Brasil, Aos Fatos, Gazeta do Povo e ICL Notícias.</div></footer>
+<footer><div class="wide">Conteúdo político baseado em fatos noticiados por BBC Brasil, Intercept, Piauí, Estadão, O Globo, g1, UOL, Veja, Valor, Poder360, CNN Brasil, Aos Fatos, Gazeta do Povo e ICL Notícias.</div></footer>
 </div>
 
 <div id="list" hidden><div class="wrap">
@@ -207,12 +310,12 @@ BRBU="https://g1.globo.com/politica/noticia/2026/10/02/pf-investiga-emprestimo-d
 ICL="https://iclnoticias.com.br/empresas-de-flavio-bolsonaro-e-careca-do-inss/",
 GAZ="https://www.gazetadopovo.com.br/republica/gilmar-mendes-nega-reabertura-rachadinhas-flavio-bolsonaro/";
 var META={
- "Caso Master":{i:"🏦",d:"Banqueiro, filme, viagens e mensagens",q:"Quem visita o banqueiro na véspera de se lançar candidato deve explicações ao eleitor."},
- "Rachadinha":{i:"💸",d:"Gabinete, fantasmas e o desfecho",q:"Rachadinha: caso arquivado depois que a Justiça anulou provas por questão de foro."},
- "Milícia":{i:"⚠️",d:"Homenagens, medalhas e emendas",q:"Homenagens e emendas a nomes ligados à milícia. Isso pede explicação."},
- "Patrimônio":{i:"🏠",d:"Imóveis, dinheiro vivo e mansão",q:"Metade dos imóveis da família paga em dinheiro vivo. Pergunte como."},
- "Interferência":{i:"🕵️",d:"PF, Moro e blindagem",q:"Moro saiu do governo apontando proteção a familiares."},
- "Outros casos":{i:"⚖️",d:"Advogado de PM e a mansão de Angra",q:"Casos em que o nome de Flávio aparece e que merecem explicação."}
+ "Caso Master":{d:"Banqueiro, filme, viagens e mensagens",q:"Quem visita o banqueiro na véspera de se lançar candidato deve explicações ao eleitor."},
+ "Rachadinha":{d:"Gabinete, fantasmas e o desfecho",q:"Rachadinha: caso arquivado depois que a Justiça anulou provas por questão de foro."},
+ "Milícia":{d:"Homenagens, medalhas e emendas",q:"Homenagens e emendas a nomes ligados à milícia. Isso pede explicação."},
+ "Patrimônio":{d:"Imóveis, dinheiro vivo e mansão",q:"Metade dos imóveis da família paga em dinheiro vivo. Pergunte como."},
+ "Interferência":{d:"PF, Moro e blindagem",q:"Moro saiu do governo apontando proteção a familiares."},
+ "Outros casos":{d:"Advogado de PM e a mansão de Angra",q:"Casos em que o nome de Flávio aparece e que merecem explicação."}
 };
 var TOPH=["Investigado pela PF no Caso Master","R$ 134 milhões negociados para o filme Dark Horse","Ao menos 43 mentiras sobre Vorcaro, segundo o Aos Fatos","Visitou Vorcaro na véspera de virar presidenciável","PF investiga empréstimo do BRB para mansão de R$ 6 milhões","Dividia conta com suspeito de lavar dinheiro do INSS","11 meses de mensagens com Vorcaro","51 de 107 imóveis pagos em dinheiro vivo"];
 var TOP=TOPH.map(function(h){return I.findIndex(function(x){return x.h===h})});
@@ -252,7 +355,7 @@ function go(k,key){
   }
   show("list");
 }
-function shareText(x){return "🔎 *"+x.h+"*\n\n"+x.x+"\n\nFonte ("+x.s+"):\n"+x.u+(SITE?"\n\nMais fatos, com fontes: "+SITE:"")}
+function shareText(x){return "*"+x.h+"*\n\n"+x.x+"\n\nFonte ("+x.s+"):\n"+x.u+(SITE?"\n\nMais fatos, com fontes: "+SITE:"")}
 function copy(t,b,label){
   function ok(){b.textContent="Copiado!";setTimeout(function(){b.textContent=label},1800)}
   function fb(){var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok()}catch(e){}ta.remove()}
@@ -335,58 +438,95 @@ function setTool(title){document.getElementById("tt").textContent=title;var b=do
 /* Mapa */
 var CAT={p:"#6EA8FE",m:"#FFC857",i:"#4ADE9C",x:"#FF6B6B"};
 var NODES={
- F:{x:200,y:310,l:["FLÁVIO","BOLSONARO"],f:1},
- V:{x:200,y:70,l:["Daniel Vorcaro","Banco Master"],c:"m",e:"🏦"},
- DH:{x:70,y:180,l:["Filme","Dark Horse"],c:"m",e:"🎬"},
- BRB:{x:330,y:180,l:["BRB"],c:"m",e:"🏛️"},
- Z:{x:345,y:420,l:["Fabiano Zettel","(cunhado)"],c:"p",e:"👤"},
- W:{x:200,y:480,l:["Willer Tomaz"],c:"p",e:"👤",side:"r"},
- C:{x:62,y:415,l:["Careca do INSS","(empresas)"],c:"m",e:"🏢"},
- I:{x:322,y:580,l:["Desvios","do INSS"],c:"x",e:"🔎"},
- M:{x:95,y:585,l:["Mansão em","Angra"],c:"i",e:"🏝️"}
+ F:{x:220,y:270,l:["FLÁVIO","BOLSONARO"],f:1},
+ V:{x:220,y:102,l:["Daniel Vorcaro","Banco Master"],c:"m",e:"DV",lp:"u"},
+ BRB:{x:352,y:167,l:["BRB"],c:"m",e:"BRB",lp:"u"},
+ Z:{x:383,y:311,l:["Fabiano","Zettel"],c:"p",e:"FZ",lp:"d"},
+ W:{x:283,y:426,l:["Willer Tomaz"],c:"p",e:"WT",lp:"r"},
+ M:{x:131,y:413,l:["Mansão em","Angra"],c:"i",e:"AG",lp:"d"},
+ C:{x:52,y:276,l:["Careca do INSS","(empresas)"],c:"m",e:"CI",lp:"d"},
+ DH:{x:112,y:141,l:["Filme","Dark Horse"],c:"m",e:"DH",lp:"l"},
+ I:{x:314,y:502,l:["Desvios","do INSS"],c:"x",e:"INSS",lp:"d"}
 };
 var POD="https://www.poder360.com.br/justica/richarlison-briga-na-justica-com-amigo-de-flavio-bolsonaro/";
 var EDGES=[
 ["F","V","110 mensagens",{h:"110 mensagens em 11 meses de contato",x:"Mensagens do celular de Vorcaro mostram 11 meses de contato com Flávio: 110 registros e 14 ligações (8 atendidas).",s:"Revista Piauí",u:P_MSG}],
-["V","DH","R$ 61 mi pagos",{h:"Master pagou ao menos R$ 61 milhões ao filme",x:"Ao menos R$ 61 milhões foram pagos entre fevereiro e maio de 2025, em seis operações, para o filme sobre Jair Bolsonaro.",s:"The Intercept Brasil",u:INT}],
-["F","DH","R$ 134 mi negociados",{h:"Flávio negociou R$ 134 milhões para o filme",x:"Segundo o Intercept, Flávio negociou com Vorcaro o financiamento do filme Dark Horse.",s:"The Intercept Brasil",u:INT}],
-["V","BRB","caso Master",{h:"O BRB aparece envolvido no Caso Master",x:"A reportagem do g1 trata o BRB como envolvido no Caso Master.",s:"g1",u:BRBU}],
-["F","BRB","empréstimo na PF",{h:"PF investiga empréstimo do BRB a Flávio",x:"Empréstimo para comprar mansão avaliada em R$ 6 milhões. A suspeita é de juros abaixo do valor de mercado.",s:"g1",u:BRBU}],
-["F","Z","usou apartamento",{h:"Usou apartamento do cunhado de Vorcaro",x:"Durante a campanha em São Paulo, Flávio usou um apartamento de Fabiano Zettel, cunhado de Vorcaro.",s:"Revista Piauí",u:P_APT}],
-["Z","W","apto. vendido",{h:"Willer Tomaz comprou o apartamento depois",x:"O apartamento foi comprado de Fabiano Zettel por Willer Tomaz.",s:"Revista Piauí",u:P_APT}],
+["V","DH","R$ 61 mi",{h:"Master pagou ao menos R$ 61 milhões ao filme",x:"Ao menos R$ 61 milhões foram pagos entre fevereiro e maio de 2025, em seis operações, para o filme sobre Jair Bolsonaro.",s:"The Intercept Brasil",u:INT}],
+["F","DH","R$ 134 mi",{h:"Flávio negociou R$ 134 milhões para o filme",x:"Segundo o Intercept, Flávio negociou com Vorcaro o financiamento do filme Dark Horse.",s:"The Intercept Brasil",u:INT}],
+["V","BRB","Master",{h:"O BRB aparece envolvido no Caso Master",x:"A reportagem do g1 trata o BRB como envolvido no Caso Master.",s:"g1",u:BRBU}],
+["F","BRB","empréstimo",{h:"PF investiga empréstimo do BRB a Flávio",x:"Empréstimo para comprar mansão avaliada em R$ 6 milhões. A suspeita é de juros abaixo do valor de mercado.",s:"g1",u:BRBU}],
+["F","Z","apartamento",{h:"Usou apartamento do cunhado de Vorcaro",x:"Durante a campanha em São Paulo, Flávio usou um apartamento de Fabiano Zettel, cunhado de Vorcaro.",s:"Revista Piauí",u:P_APT}],
+["Z","W","vendido",{h:"Willer Tomaz comprou o apartamento depois",x:"O apartamento foi comprado de Fabiano Zettel por Willer Tomaz.",s:"Revista Piauí",u:P_APT}],
 ["F","W","conta dividida",{h:"Dividia conta com Willer Tomaz, indicam e-mails",x:"Segundo o UOL, e-mails indicam conta compartilhada entre Flávio e Willer, suspeito de lavar dinheiro do INSS.",s:"UOL",u:UOL}],
 ["W","I","investigado",{h:"Willer Tomaz é investigado nos desvios do INSS",x:"Willer já foi preso no escândalo da JBS e é investigado nos desvios bilionários do INSS, segundo a Piauí.",s:"Revista Piauí",u:P_JATO}],
 ["F","C","mesma sala",{h:"Empresa na mesma sala de 16 firmas do Careca do INSS",x:"Segundo o ICL, usavam a mesma contabilidade; a irmã do contador administra o escritório de advocacia de Flávio.",s:"ICL Notícias",u:ICL}],
-["F","M","visitou 2020/21",{h:"Visitou a mansão de Angra em 2020 e em 2021",x:"Segundo o Poder360, Flávio visitou o imóvel pouco antes da venda e voltou em 2021 com Willer Tomaz. Ele diz não ter relação com o imóvel nem com o processo.",s:"Poder360",u:POD}],
+["F","M","visitou",{h:"Visitou a mansão de Angra em 2020 e em 2021",x:"Segundo o Poder360, Flávio visitou o imóvel pouco antes da venda e voltou em 2021 com Willer Tomaz. Ele diz não ter relação com o imóvel nem com o processo.",s:"Poder360",u:POD}],
 ["W","M","disputa a posse",{h:"Willer Tomaz disputa a posse da mansão na Justiça",x:"O amigo de Flávio entrou na Justiça pela posse do imóvel de R$ 10 milhões, em Angra dos Reis.",s:"Poder360",u:POD}]
 ];
-function viewMap(){
-  var b=setTool("Mapa de relações"),NS="http://www.w3.org/2000/svg";
-  b.appendChild(el("p","note","Toque em um nome para destacar as ligações. Toque numa etiqueta para ver o fato e a fonte."));
+var MAPN=0;
+function buildMap(o){
+  var NS="http://www.w3.org/2000/svg",id=++MAPN;
   function mk(n,at,par){var e=document.createElementNS(NS,n);for(var k in at)e.setAttribute(k,at[k]);if(par)par.appendChild(e);return e}
-  var svg=mk("svg",{viewBox:"0 0 400 670","class":"map",role:"group","aria-label":"Mapa de relações de Flávio Bolsonaro"});
-  var df=mk("defs",{},svg),gr=mk("radialGradient",{id:"glow"},df);
-  mk("stop",{offset:"0","stop-color":"#D7191F","stop-opacity":".5"},gr);mk("stop",{offset:"1","stop-color":"#D7191F","stop-opacity":"0"},gr);
-  var bg=mk("rect",{x:0,y:0,width:400,height:670,rx:20,fill:"#0E1A2F"},svg);
-  mk("circle",{cx:200,cy:310,r:190,fill:"url(#glow)","pointer-events":"none"},svg);
-  var gE=mk("g",{},svg),gP=mk("g",{},svg),gN=mk("g",{},svg),els={nodes:{},edges:[]};
+  function rad(N){return N.f?36:23}
+  var svg=mk("svg",{viewBox:"0 0 440 590","class":"map",role:"group","aria-label":"Mapa de relações de Flávio Bolsonaro"});
+  var df=mk("defs",{},svg);
+  var bgG=mk("radialGradient",{id:"bg"+id,cx:"50%",cy:"46%",r:"70%"},df);
+  mk("stop",{offset:"0","stop-color":"#1B2E57"},bgG);mk("stop",{offset:"1","stop-color":"#0A1222"},bgG);
+  var gl=mk("radialGradient",{id:"gl"+id},df);
+  mk("stop",{offset:"0","stop-color":"#D7191F","stop-opacity":".55"},gl);mk("stop",{offset:"1","stop-color":"#D7191F","stop-opacity":"0"},gl);
+  var pt=mk("pattern",{id:"dt"+id,width:18,height:18,patternUnits:"userSpaceOnUse"},df);mk("circle",{cx:2,cy:2,r:.9,fill:"#fff","fill-opacity":".09"},pt);
+  var fl=mk("filter",{id:"fx"+id,x:"-40%",y:"-40%",width:"180%",height:"180%"},df);
+  mk("feGaussianBlur",{stdDeviation:"3.2",result:"b"},fl);var mg=mk("feMerge",{},fl);mk("feMergeNode",{"in":"b"},mg);mk("feMergeNode",{"in":"SourceGraphic"},mg);
+  var bg=mk("rect",{x:0,y:0,width:440,height:590,rx:22,fill:"url(#bg"+id+")"},svg);
+  mk("rect",{x:0,y:0,width:440,height:590,rx:22,fill:"url(#dt"+id+")","pointer-events":"none"},svg);
+  mk("circle",{cx:220,cy:270,r:250,fill:"url(#gl"+id+")","pointer-events":"none"},svg);
+  mk("circle",{cx:220,cy:270,r:168,fill:"none",stroke:"#fff","stroke-opacity":".1","stroke-dasharray":"2 5"},svg);
+  mk("circle",{cx:220,cy:270,r:88,fill:"none",stroke:"#fff","stroke-opacity":".07","stroke-dasharray":"2 5"},svg);
+  var t1=mk("text",{x:18,y:30,"class":"mt"},svg);t1.textContent="REDE DE RELAÇÕES";
+  var t2=mk("text",{x:422,y:30,"class":"mt r"},svg);t2.textContent=EDGES.length+" LIGAÇÕES · TODAS COM FONTE";
+  var gE=mk("g",{},svg),gN=mk("g",{},svg),gP=mk("g",{},svg),els={nodes:{},edges:[]};
+  /* rotulos dos nos (retangulos para evitar colisao) */
+  var obst=[];
+  function labelPos(N,i){
+    var n=N.l.length,r=rad(N);
+    if(N.lp==="u")return{x:N.x,y:N.y-r-9-(n-1-i)*13,a:"middle"};
+    if(N.lp==="r")return{x:N.x+r+7,y:N.y+4-(n-1)*6.5+i*13,a:"start"};
+    if(N.lp==="l")return{x:N.x-r-7,y:N.y+4-(n-1)*6.5+i*13,a:"end"};
+    return{x:N.x,y:N.y+r+15+i*13,a:"middle"};
+  }
+  for(var k in NODES){var N=NODES[k];if(N.f)continue;obst.push({c:1,x:N.x,y:N.y,r:rad(N)+6});
+    N.l.forEach(function(s,i){var p=labelPos(N,i),w=s.length*6.6;obst.push({x:p.a==="start"?p.x:(p.a==="end"?p.x-w:p.x-w/2),y:p.y-11,w:w,h:14})})}
+  obst.push({c:1,x:220,y:270,r:45});
+  function hit(R,placed){
+    var all=obst.concat(placed);
+    for(var i=0;i<all.length;i++){var o=all[i];
+      if(o.c){var cx=Math.max(R.x,Math.min(o.x,R.x+R.w)),cy=Math.max(R.y,Math.min(o.y,R.y+R.h));if((cx-o.x)*(cx-o.x)+(cy-o.y)*(cy-o.y)<o.r*o.r)return true}
+      else if(R.x<o.x+o.w+4&&R.x+R.w+4>o.x&&R.y<o.y+o.h+4&&R.y+R.h+4>o.y)return true}
+    return false;
+  }
+  var placed=[];
   EDGES.forEach(function(E,ix){
-    var A=NODES[E[0]],B=NODES[E[1]],dx=B.x-A.x,dy=B.y-A.y,L=Math.sqrt(dx*dx+dy*dy),sg=ix%2?1:-1;
-    var cx=(A.x+B.x)/2-dy/L*L*.08*sg,cy=(A.y+B.y)/2+dx/L*L*.08*sg;
-    var path=mk("path",{d:"M"+A.x+" "+A.y+" Q"+cx+" "+cy+" "+B.x+" "+B.y,"class":"edge"},gE);
-    var mx=.25*A.x+.5*cx+.25*B.x,my=.25*A.y+.5*cy+.25*B.y,w=E[2].length*5.4+18;
+    var A=NODES[E[0]],B=NODES[E[1]],sp=E[0]==="F"||E[1]==="F",O=sp?(E[0]==="F"?B:A):null;
+    var dx=B.x-A.x,dy=B.y-A.y,sg=ix%2?1:-1,cx=(A.x+B.x)/2-dy*.06*sg,cy=(A.y+B.y)/2+dx*.06*sg;
+    function bz(t){var u=1-t;return{x:u*u*A.x+2*u*t*cx+t*t*B.x,y:u*u*A.y+2*u*t*cy+t*t*B.y}}
+    var col=O?CAT[O.c]:"#FFFFFF",w=E[2].length*5.6+18,ts=sp?[.7,.58,.46,.8,.36]:[.5,.4,.6,.3,.7],pos=null;
+    var L=Math.sqrt(dx*dx+dy*dy)||1,nx=-dy/L,ny=dx/L,offs=[0,16,-16,28,-28];
+    for(var q=0;q<ts.length&&!pos;q++)for(var oi=0;oi<offs.length&&!pos;oi++){var p0=bz(ts[q]),p={x:p0.x+nx*offs[oi],y:p0.y+ny*offs[oi]},R={x:p.x-w/2,y:p.y-11,w:w,h:22};if(!hit(R,placed)){pos=p;placed.push(R)}}
+    if(!pos){pos=bz(ts[0]);placed.push({x:pos.x-w/2,y:pos.y-11,w:w,h:22})}
+    var path=mk("path",{d:"M"+A.x+" "+A.y+" Q"+cx.toFixed(1)+" "+cy.toFixed(1)+" "+B.x+" "+B.y,"class":"edge",stroke:col,"stroke-opacity":O?".85":".45"},gE);
     var g=mk("g",{"class":"pill",tabindex:0,role:"button","aria-label":E[3].h},gP);
-    mk("rect",{x:mx-w/2,y:my-10,width:w,height:20,rx:10},g);
-    var t=mk("text",{x:mx,y:my+3.5},g);t.textContent=E[2];
+    mk("rect",{x:pos.x-w/2,y:pos.y-11,width:w,height:22,rx:11,stroke:col},g);
+    var t=mk("text",{x:pos.x,y:pos.y+4},g);t.textContent=E[2];
     function opn(){open({t:"Relação",d:"",h:E[3].h,x:E[3].x,s:E[3].s,u:E[3].u})}
     g.addEventListener("click",function(ev){ev.stopPropagation();opn()});
     g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();opn()}});
     els.edges.push({a:E[0],b:E[1],path:path,pill:g,E:E,open:opn});
   });
-  var panel=el("div","mp");
+  /* nos */
+  var cur=null,panel=o.panelHost;
   function hint(){panel.textContent="";panel.appendChild(el("p","note","Selecione um nome no mapa para ver só as ligações dele."))}
   function sel(k){
-    var near={};if(k){near[k]=1}
+    var near={};if(k)near[k]=1;
     els.edges.forEach(function(e){var on=!k||e.a===k||e.b===k;e.path.classList.toggle("dim",!on);e.pill.classList.toggle("dim",!on);if(k&&on){near[e.a]=1;near[e.b]=1}});
     for(var n in els.nodes)els.nodes[n].classList.toggle("dim",!!k&&!near[n]);
     if(!k){hint();return}
@@ -395,23 +535,32 @@ function viewMap(){
     els.edges.forEach(function(e){if(e.a===k||e.b===k){var bt=el("button","src",e.E[2]);bt.type="button";bt.onclick=e.open;ac.appendChild(bt)}});
     panel.appendChild(ac);
   }
-  var cur=null;
   bg.addEventListener("click",function(){cur=null;sel(null)});
   for(var k in NODES){(function(k){
-    var N=NODES[k],r=N.f?40:26,g=mk("g",{"class":"node",tabindex:0,role:"button","aria-label":N.l.join(" ")},gN);
-    mk("circle",{cx:N.x,cy:N.y,r:r,fill:N.f?"#D7191F":"#16233D",stroke:N.f?"#fff":CAT[N.c],"stroke-width":N.f?4:3},g);
-    if(N.f){var t1=mk("text",{x:N.x,y:N.y-2,"class":"fl"},g);t1.textContent="FLÁVIO";var t2=mk("text",{x:N.x,y:N.y+12,"class":"fl s"},g);t2.textContent="BOLSONARO"}
-    else{var em=mk("text",{x:N.x,y:N.y+8,"class":"em"},g);em.textContent=N.e;
-      N.l.forEach(function(s,i){var t=N.side?mk("text",{x:N.x+r+7,y:N.y+4+i*13,"class":"nl l"},g):mk("text",{x:N.x,y:N.y+r+15+i*13,"class":"nl"},g);t.textContent=s})}
+    var N=NODES[k],r=rad(N),g=mk("g",{"class":"node"+(N.f?" fnode":""),tabindex:0,role:"button","aria-label":N.l.join(" ")},gN);
+    if(N.f){mk("circle",{cx:N.x,cy:N.y,r:r+4,fill:"none",stroke:"#FF4B50","stroke-width":2,"class":"pulse"},g)}
+    mk("circle",{cx:N.x,cy:N.y,r:r,fill:N.f?"#D7191F":"#101B33",stroke:N.f?"#fff":CAT[N.c],"stroke-width":N.f?4:3.5,filter:"url(#fx"+id+")"},g);
+    if(N.f){var a=mk("text",{x:N.x,y:N.y-2,"class":"fl"},g);a.textContent="FLÁVIO";var b=mk("text",{x:N.x,y:N.y+13,"class":"fl s"},g);b.textContent="BOLSONARO"}
+    else{var em=mk("text",{x:N.x,y:N.y+(N.e.length>2?5:6),"class":"em",style:"font-size:"+(N.e.length>2?12:16)+"px"},g);em.textContent=N.e;
+      N.l.forEach(function(s,i){var p=labelPos(N,i),t=mk("text",{x:p.x,y:p.y,"class":"nl"+(p.a==="start"?" l":(p.a==="end"?" e":""))},g);t.textContent=s})}
     function pick(ev){ev.stopPropagation();cur=cur===k?null:k;sel(cur)}
     g.addEventListener("click",pick);
     g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(e)}});
     els.nodes[k]=g;
   })(k)}
-  b.appendChild(svg);
-  var lg=el("div","legend");
-  [["p","Pessoas"],["m","Empresas e dinheiro"],["i","Imóveis"],["x","Investigação"]].forEach(function(o){var s=el("span");var i=el("i");i.style.background=CAT[o[0]];s.appendChild(i);s.appendChild(document.createTextNode(o[1]));lg.appendChild(s)});
-  b.appendChild(lg);hint();b.appendChild(panel);
+  o.svgHost.appendChild(svg);
+  [["p","Pessoas"],["m","Empresas e dinheiro"],["i","Imóveis"],["x","Investigação"]].forEach(function(q){var s=el("span");var i=el("i");i.style.background=CAT[q[0]];s.appendChild(i);s.appendChild(document.createTextNode(q[1]));o.legendHost.appendChild(s)});
+  hint();
+}
+function viewMap(){
+  var b=setTool("Mapa de relações");
+  b.appendChild(el("p","note","Toque num nome para ver só as ligações dele. Toque numa etiqueta para ler o fato e abrir a fonte."));
+  var host=el("div"),lg=el("div","legend"),pn=el("div","mp");
+  b.appendChild(host);b.appendChild(lg);b.appendChild(pn);
+  buildMap({svgHost:host,legendHost:lg,panelHost:pn});
+  var ls=el("details","faq"),sm=el("summary","","Prefere ver em lista? Toque aqui");ls.appendChild(sm);
+  var lb=el("div","body");EDGES.forEach(function(E){var bt=el("button","row2",E[3].h);bt.type="button";bt.onclick=function(){open({t:"Relação",d:"",h:E[3].h,x:E[3].x,s:E[3].s,u:E[3].u})};lb.appendChild(bt)});
+  ls.appendChild(lb);b.appendChild(ls);
   b.appendChild(el("p","note","Atenção: cada ligação mostra o que foi reportado, com fonte. Ligação no mapa não é prova de crime, e investigação não é condenação."));
 }
 
@@ -443,22 +592,56 @@ function viewFaq(){
 /* ---------- Home ---------- */
 function tile(ic,name,desc,n,fn){
   var b=el("button","tile");b.type="button";
-  b.appendChild(el("span","ic",ic));b.appendChild(el("b","",name));b.appendChild(el("span","",desc));
+  b.appendChild(el("b","",name));b.appendChild(el("span","",desc));
   if(n!=null)b.appendChild(el("em","",n+(n===1?" fato":" fatos")));
   b.onclick=fn;return b;
 }
+
+/* ---------- Participe e divulgue (links de terceiros, com credito) ---------- */
+var PARTNERS=[
+{cls:"b1",kicker:"PARTICIPE",t:"Tem ato perto de você?",d:"Atos, plenárias e encontros do segundo turno, num só lugar.",chips:[],cta:"Ver a agenda",
+ url:"https://agenda-mobilizacoes.participa.workers.dev/",credito:"Agenda de Mobilizações (agenda-mobilizacoes.participa.workers.dev)",autor:""},
+{cls:"b2",kicker:"COMPARTILHE",t:"Material pronto para espalhar",d:"Escolha um tema, baixe e mande para seus grupos.",chips:["Vídeos","Artes","Lambes","Guias"],cta:"Abrir o acervo",
+ url:"https://acervodavitoria.pages.dev/",credito:"Acervo da Vitória (acervodavitoria.pages.dev)",autor:""},
+{cls:"b3",kicker:"BAIXE",t:"Mais materiais na pasta",d:"Pasta compartilhada no Google Drive. Abra e escolha o que quiser usar.",chips:[],cta:"Abrir a pasta",
+ url:"https://drive.google.com/drive/folders/1OlT1DGqvNcuSPevnPl0IbzwBk4Xbd5_v?usp=sharing",credito:"Pasta compartilhada no Google Drive",autor:""}
+];
+(function(){
+  var box=document.getElementById("banners");
+  PARTNERS.forEach(function(x){
+    var b=el("div","banner "+x.cls),tp=el("div","bn-top");
+    tp.appendChild(el("span","bn-kicker",x.kicker));b.appendChild(tp);
+    b.appendChild(el("h3","",x.t));b.appendChild(el("p","",x.d));
+    if(x.chips.length){var c=el("div","bn-chips");x.chips.forEach(function(k){c.appendChild(el("span","",k))});b.appendChild(c)}
+    var a=el("div","bn-actions");
+    a.appendChild(link("bn-cta",x.cta+" →",x.url));
+    a.appendChild(link("bn-wa","Enviar no WhatsApp",wa(x.t+"\n"+x.d+"\n"+x.url)));
+    b.appendChild(a);
+    b.appendChild(el("div","bn-credit","Crédito: "+x.credito+(x.autor?" · "+x.autor:"")));
+    box.appendChild(b);
+  });
+  document.getElementById("credits").textContent="Links de terceiros: o crédito e a autoria são dos respectivos criadores.";
+})();
+(function(){
+  buildMap({svgHost:document.getElementById("mapHome"),legendHost:document.getElementById("mbLegend"),panelHost:document.getElementById("mapPanel")});
+  var st=document.getElementById("mbStats"),n=Object.keys(NODES).length-1;
+  [EDGES.length+" ligações",n+" nomes","todas com fonte"].forEach(function(t){st.appendChild(el("span","",t))});
+  document.getElementById("mapFull").onclick=viewMap;
+})();
 var tl=document.getElementById("tools");
-tl.appendChild(tile("🗺️","Mapa de relações","Quem se liga a quem, com fontes",null,viewMap));
-tl.appendChild(tile("💬","O que responder","Quando alguém discordar",null,viewFaq));
+tl.appendChild(tile("","Mapa de relações","Quem se liga a quem, com fontes",null,viewMap));
+tl.appendChild(tile("","O que responder","Quando alguém discordar",null,viewFaq));
 var bt=document.getElementById("byTag");
-Object.keys(META).forEach(function(k){bt.appendChild(tile(META[k].i,k,META[k].d,getList("tag",k).length,function(){go("tag",k)}))});
+Object.keys(META).forEach(function(k){bt.appendChild(tile("",k,META[k].d,getList("tag",k).length,function(){go("tag",k)}))});
 var be=document.getElementById("byEra");
-ERAS.forEach(function(E,i){be.appendChild(tile("🗓️",E.n,E.s,getList("era",i).length,function(){go("era",i)}))});
+ERAS.forEach(function(E,i){be.appendChild(tile("",E.n,E.s,getList("era",i).length,function(){go("era",i)}))});
+[].forEach.call(document.querySelectorAll(".tabs2 button"),function(b){b.onclick=function(){
+  [].forEach.call(document.querySelectorAll(".tabs2 button"),function(k){k.setAttribute("aria-pressed",k===b);document.getElementById(k.getAttribute("data-p")).hidden=k!==b})}});
 document.getElementById("goTop").onclick=function(){go("top",0)};
 document.getElementById("back").onclick=function(){show("home")};
 document.getElementById("tback").onclick=function(){show("home")};
 var msg="Flávio Bolsonaro é investigado pela PF no Caso Master. Veja os fatos, com links para as fontes."+(SITE?" "+SITE:"");
-["shareSite","shareSite2"].forEach(function(id){document.getElementById(id).href=wa(msg)});
+document.getElementById("shareSite").href=wa(msg);
 </script>
 </body>
 </html>
